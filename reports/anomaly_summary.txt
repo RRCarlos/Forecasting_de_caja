@@ -1,0 +1,37 @@
+============================================================
+RESUMEN DE DETECCIÓN DE ANOMALÍAS
+============================================================
+
+Total de registros analizados: 334
+Total de anomalías detectadas: 162 (48.50%)
+
+--- Distribución por severidad ---
+  crítico     :   13 ( 8.02%)
+  alto        :   16 ( 9.88%)
+  medio       :  103 (63.58%)
+  bajo        :   30 (18.52%)
+
+--- Detección por método ---
+  Temporal            :  105
+  Benford             :   75
+  Isolation Forest    :   45
+  IQR                 :   24
+  Z-score             :    9
+
+--- Top 10 anomalías más severas ---
+   1. [crítico ] score=1.00 | 2024-12-10 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Benford, Temporal
+   2. [crítico ] score=0.85 | 2024-03-15 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Temporal
+   3. [crítico ] score=0.85 | 2024-04-02 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Temporal
+   4. [crítico ] score=0.85 | 2024-04-27 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Temporal
+   5. [crítico ] score=0.85 | 2024-05-16 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Temporal
+   6. [crítico ] score=0.85 | 2024-06-13 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Temporal
+   7. [crítico ] score=0.85 | 2024-08-17 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Temporal
+   8. [crítico ] score=0.85 | 2024-08-31 00:00:00 | métodos: Isolation Forest, Z-score, IQR, Temporal
+   9. [crítico ] score=0.85 | 2024-11-16 00:00:00 | métodos: Isolation Forest, IQR, Benford, Temporal
+  10. [crítico ] score=0.70 | 2024-03-17 00:00:00 | métodos: Isolation Forest, Benford, Temporal
+
+--- Precisión vs anomalías conocidas ---
+  Tasa de detección: 83.33%
+  Anomalías conocidas totales: 18
+
+============================================================

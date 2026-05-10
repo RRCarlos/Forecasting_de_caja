@@ -1,0 +1,249 @@
+/* === Corporate Dashboard Theme === */
+/* Paleta: Azul corporativo (#1a237e, #0d47a1), blanco, grises */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #1a237e;
+    --primary-light: #0d47a1;
+    --primary-lighter: #e8eaf6;
+    --accent-green: #00c853;
+    --accent-red: #ff1744;
+    --accent-amber: #ffc107;
+    --bg: #f4f5fa;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --text-secondary: #6c757d;
+    --border: #e9ecef;
+    --shadow: 0 2px 8px rgba(26, 35, 126, 0.08);
+    --shadow-hover: 0 4px 16px rgba(26, 35, 126, 0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ── */
+.header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    padding: 20px 32px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(26, 35, 126, 0.2);
+}
+
+.header-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.header-subtitle {
+    font-size: 13px;
+    opacity: 0.8;
+    font-weight: 300;
+    margin-top: 2px;
+}
+
+.header-badge {
+    background: rgba(255,255,255,0.15);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ── KPI Cards ── */
+.kpi-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.kpi-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.kpi-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.kpi-value {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.kpi-value-small {
+    font-size: 20px;
+}
+
+.kpi-change {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.kpi-change.positive { color: var(--accent-green); }
+.kpi-change.negative { color: var(--accent-red); }
+.kpi-change.neutral { color: var(--text-secondary); }
+
+.kpi-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.kpi-indicator.green { background: var(--accent-green); }
+.kpi-indicator.red { background: var(--accent-red); }
+.kpi-indicator.amber { background: var(--accent-amber); }
+
+.kpi-card .kpi-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.kpi-card .kpi-accent.blue { background: var(--primary-light); }
+.kpi-card .kpi-accent.green { background: var(--accent-green); }
+.kpi-card .kpi-accent.red { background: var(--accent-red); }
+.kpi-card .kpi-accent.amber { background: var(--accent-amber); }
+
+/* ── Charts ── */
+.chart-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    height: 100%;
+}
+
+.chart-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-title-badge {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* ── Filters ── */
+.filters-bar {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.DateRangePicker, .Dropdown {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 4px 8px;
+}
+
+/* ── Table ── */
+.table-container {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.table-row-critical { border-left: 3px solid var(--accent-red); }
+.table-row-high { border-left: 3px solid var(--accent-amber); }
+.table-row-medium { border-left: 3px solid #2196f3; }
+.table-row-low { border-left: 3px solid #90a4ae; }
+
+/* ── Tooltips ── */
+.dash-tooltip {
+    background: var(--text) !important;
+    color: white !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    max-width: 300px !important;
+}
+
+/* ── Loading ── */
+.dash-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 20px 32px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    border-top: 1px solid var(--border);
+    margin-top: 24px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .header { flex-direction: column; text-align: center; gap: 12px; }
+    .header-title { font-size: 18px; }
+    .kpi-value { font-size: 20px; }
+    .filters-bar { flex-direction: column; }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c4c4c4; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
